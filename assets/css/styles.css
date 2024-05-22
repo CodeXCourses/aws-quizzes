@@ -1,0 +1,138 @@
+/* Base styles for the entire page */
+body {
+  font-family: 'Georgia', serif;
+  color: #dcdcdc; /* Light gray text for readability */
+  background-color: #232f3e; /* Dark background similar to AWS dark mode */
+  font-size: 28px; /* Suitable font size for desktop */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto; /* Center-align the content */
+  padding: 20px 0; /* Padding around the body to avoid touching the edges */
+}
+
+header,
+footer {
+  background-color: #2e3c4e; /* Slightly lighter background for visual hierarchy */
+  color: #dcdcdc;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+}
+p {
+  font-size: calc(1rem + 0.5vw); /* Slightly larger paragraph text */
+  /* Increases line height for better readability */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: calc(
+    1.25rem + 1vw
+  ); /* Dynamically adjusts font size based on viewport width */
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+a {
+  color: #48bb78; /* AWS green color for links to stand out */
+}
+
+/* Navigation styles */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  align-items: center;
+  margin: auto;
+  padding: 0 50px;
+}
+
+/* Main content area styling */
+main {
+  background-color: #2e3c4e; /* Consistent with header and footer */
+  padding: 20px;
+  margin: 20px auto; /* Centered with vertical margin */
+  border-radius: 3px;
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5);
+  width: 95%; /* Responsive width */
+  max-width: none; /* Allows content to fill the space */
+  min-height: 70vh; /* Keeps height consistent for navigation button placement */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically centers content */
+}
+
+/* Article and post content styles */
+.article,
+.post-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically in the container */
+
+  text-align: left;
+  padding: 20px 20px; /* Adds padding above and below the text */
+  padding-right: 40px;
+  flex-grow: 1; /* Allows the container to grow and fill the space as needed */
+}
+
+img,
+pre {
+  width: 100%; /* Ensure images and preformatted text fit container */
+  max-width: 100%; /* Prevent overflow */
+  height: auto; /* Maintain aspect ratio for images */
+}
+
+pre {
+  background-color: #627083;
+  padding: 10px;
+  border: 1px solid #232f3e;
+  border-radius: 14px;
+}
+table {
+  width: 100%; /* Adjust table width as needed */
+  border-collapse: separate; /* This ensures that the spacing is added between cells */
+  border-spacing: 0 10px; /* Adjust the spacing as needed, format (horizontal vertical) */
+}
+
+th,
+td {
+  border: 1px solid black; /* Adjust the border size and color as needed */
+  padding: 8px; /* Adjust padding inside cells */
+}
+
+th {
+  background-color: #f2f2f2; /* Adds a light grey background to header cells */
+  color: black;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  body,
+  nav ul li {
+    font-size: 18px; /* Slightly smaller font size for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Smaller font size for mobile devices */
+  }
+  header h1,
+  article h3,
+  h4 {
+    font-size: 1.5rem; /* Adjusts header sizes for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px; /* Even smaller font size for very small screens */
+  }
+  header h1 {
+    font-size: 1.2rem; /* Further reduces title font size */
+  }
+}
