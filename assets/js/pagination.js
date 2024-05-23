@@ -49,7 +49,7 @@ window.onload = function () {
         trackQuestionStatus,
         currentPage,
         pages.length,
-        quizFinished,
+        quizFinished
       ); // Ensure this function is called after page is shown
     }, 400);
   }
@@ -60,7 +60,7 @@ window.onload = function () {
       nextButton.disabled = !isFinished; // Disabled until the quiz is finished
       nextButton.style.opacity = isFinished ? '1' : '0.5'; // Opacity based on quiz finished status
     } else {
-      nextButton.textContent = '→';
+      nextButton.textContent = 'Next';
       nextButton.onclick = function () {
         if (currentPage < pages.length - 1) {
           showPage(currentPage + 1);
@@ -76,9 +76,9 @@ window.onload = function () {
   }
 
   let nextButton = document.createElement('button');
-  nextButton.textContent = '→';
+  nextButton.textContent = 'Next';
   nextButton.className = 'pagination-button';
-  nextButton.style.opacity = '0.5'; // Opacity 0.5 by default
+  nextButton.style.opacity = '0.5';
   nextButton.disabled = true; // Disabled by default
 
   nextButton.onclick = function () {
@@ -95,7 +95,8 @@ window.onload = function () {
   paginationContainer.className = 'pagination-container';
   paginationContainer.append(pageCounter, nextButton);
 
-  contentDiv.after(paginationContainer);
+  let mainElement = document.querySelector('main');
+  mainElement.after(paginationContainer);
 
   showPage(0);
 };
@@ -106,7 +107,7 @@ function addQuizFunctionality(
   trackQuestionStatus,
   currentPage,
   totalPages,
-  quizFinished,
+  quizFinished
 ) {
   console.log('Adding quiz functionality');
   let questions = document.querySelectorAll('.post-content > ul');
@@ -129,11 +130,16 @@ function addQuizFunctionality(
       radio.name = `question-${questionIndex}`;
       radio.value = optionIndex;
       radio.style.marginRight = '10px';
-      optionWrapper.appendChild(radio);
 
       let optionText = option.querySelector('p') || option.firstChild;
-      optionWrapper.appendChild(optionText);
 
+      let label = document.createElement('label');
+      label.appendChild(radio);
+      label.appendChild(optionText);
+      label.style.display = 'flex';
+      label.style.alignItems = 'center';
+
+      optionWrapper.appendChild(label);
       option.prepend(optionWrapper);
 
       radio.onchange = function () {
@@ -191,6 +197,7 @@ function addQuizFunctionality(
           nextButton.onclick = function () {
             if (!nextButton.disabled) {
               displayResults();
+              nextButton.remove(); // Remove the button after displaying results
             }
           };
         }
@@ -208,14 +215,38 @@ function addQuizFunctionality(
 function displayResults() {
   const contentDiv = document.querySelector('.post-content');
   contentDiv.innerHTML = '';
+  contentDiv.classList.add('results-container');
 
   const resultsTitle = document.createElement('h2');
   resultsTitle.textContent = 'Quiz Results';
   contentDiv.appendChild(resultsTitle);
 
+  const score = correctAnswers.size;
+  const percentage = (score / totalQuestions) * 100;
+
   const summary = document.createElement('p');
-  summary.textContent = `You got ${correctAnswers.size} out of ${totalQuestions} questions correct.`;
+  summary.textContent = `You got ${score} out of ${totalQuestions} questions correct. (${percentage.toFixed(
+    2
+  )}%)`;
   contentDiv.appendChild(summary);
+
+  if (percentage >= 80) {
+    const passMessage = document.createElement('p');
+    passMessage.textContent = 'Good job! You passed the quiz.';
+    contentDiv.appendChild(passMessage);
+
+    if (incorrectQuestions.size > 0) {
+      const reviewMessage = document.createElement('p');
+      reviewMessage.textContent =
+        'However, please review the following questions you missed:';
+      contentDiv.appendChild(reviewMessage);
+    }
+  } else {
+    const failMessage = document.createElement('p');
+    failMessage.textContent =
+      'You failed the quiz. Please refresh the page to try again after reviewing the slides.';
+    contentDiv.appendChild(failMessage);
+  }
 
   if (incorrectQuestions.size > 0) {
     const incorrectTitle = document.createElement('h3');

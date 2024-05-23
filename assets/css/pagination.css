@@ -58,9 +58,13 @@
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 28px;
 }
 
 .submit-button:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
+}
+.results-container {
+  text-align: center;
 }
