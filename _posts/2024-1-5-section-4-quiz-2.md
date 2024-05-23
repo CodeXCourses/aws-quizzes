@@ -5,184 +5,152 @@ section: Section-4
 lesson: 2
 ---
 
-<!-- Content Covered Lesson-6, Lesson-10 of Section-4 -->
+<!-- Content Covered Lesson-10 of Section-4 -->
 
 ## Question 1:
 
-What type of storage does EC2 instance store provide?
+What is the primary purpose of Amazon Elastic Block Store (EBS)?
 
-- A) Persistent storage
+- A) To provide scalable file storage for multiple EC2 instances
+  - Incorrect: This describes Amazon EFS, not EBS.
+- B) To provide high-performance block storage for EC2 instances
+  - Correct: EBS is designed for high-performance block storage for EC2.
+- C) To distribute incoming traffic across multiple EC2 instances
+  - Incorrect: This is the function of an Elastic Load Balancer (ELB).
+- D) To provide a fully managed database service
+  - Incorrect: This describes Amazon RDS, not EBS.
 
-  - Incorrect: EC2 instance store provides ephemeral storage, not persistent storage.
-
-- B) Ephemeral storage
-
-  - Correct: EC2 instance store provides temporary, high-performance storage that is lost when the instance stops.
-
-- C) Object storage
-  - Incorrect: EC2 instance store is block storage, not object storage.
-- D) Archival storage
-  - Incorrect: EC2 instance store is not used for archival storage.
-  <!-- pagebreak -->
+<!-- pagebreak -->
 
 ## Question 2:
 
-Which feature of Amazon EFS allows it to automatically adjust to the storage needs of your application?
+What does the "Delete on Termination" setting do in Amazon EBS?
 
-- A) Pre-provisioned capacity
+- A) Automatically detaches the volume from the instance
+  - Incorrect: The volume is not simply detached; it is deleted.
+- B) Automatically deletes the volume when the instance is terminated
+  - Correct: "Delete on Termination" ensures the volume is deleted with the instance.
+- C) Backs up the volume to S3
+  - Incorrect: This is not related to the "Delete on Termination" setting.
+- D) Archives the volume for future use
+  - Incorrect: The volume is deleted, not archived.
 
-  - Incorrect: EFS does not require pre-provisioning of capacity.
-
-- B) Automatic scaling
-
-  - Correct: EFS automatically scales as you add or remove files.
-
-- C) Manual scaling
-  - Incorrect: EFS scales automatically, not manually.
-- D) Fixed capacity
-  - Incorrect: EFS does not have fixed capacity; it scales with usage.
-  <!-- pagebreak -->
+<!-- pagebreak -->
 
 ## Question 3:
 
-What is the primary advantage of using EFS Infrequent Access (EFS-IA)?
+What is an EBS Snapshot?
 
-- A) Faster access speeds
+- A) A real-time replication of an EBS volume
+  - Incorrect: Snapshots are point-in-time backups, not real-time replications.
+- B) A point-in-time backup of an EBS volume
+  - Correct: Snapshots capture the state of an EBS volume at a specific point in time.
+- C) A copy of an EC2 instance configuration
+  - Incorrect: This describes an AMI, not an EBS Snapshot.
+- D) An automated scaling configuration for EBS volumes
+  - Incorrect: Snapshots are for backups, not scaling.
 
-  - Incorrect: EFS-IA is designed for cost savings, not speed.
-
-- B) Cost savings for infrequently accessed files
-
-  - Correct: EFS-IA provides lower storage costs for files that are not accessed frequently.
-
-- C) Enhanced security
-  - Incorrect: EFS-IA focuses on cost savings, not specifically on enhanced security.
-- D) Higher durability
-  - Incorrect: EFS-IA has the same durability as standard EFS.
-  <!-- pagebreak -->
+<!-- pagebreak -->
 
 ## Question 4:
 
-Which protocol is supported by Amazon FSx for Windows File Server?
+What is the benefit of the EBS Snapshot Archive?
 
-- A) NFS
+- A) Faster snapshot creation
+  - Incorrect: The archive does not affect snapshot creation speed.
+- B) Lower storage costs for infrequently accessed snapshots
+  - Correct: The archive offers 75% cheaper storage for infrequently accessed snapshots.
+- C) Improved data availability
+  - Incorrect: The primary benefit is cost reduction, not availability.
+- D) Instantaneous data recovery
+  - Incorrect: Data recovery from the archive takes longer.
 
-  - Incorrect: NFS is supported by FSx for Lustre, not FSx for Windows File Server.
-
-- B) SMB
-
-  - Correct: FSx for Windows File Server supports the SMB protocol.
-
-- C) FTP
-  - Incorrect: FSx for Windows File Server does not support FTP.
-- D) HTTP
-  - Incorrect: FSx for Windows File Server does not support HTTP.
-  <!-- pagebreak -->
+<!-- pagebreak -->
 
 ## Question 5:
 
-What is a key feature of Amazon FSx for Lustre?
+What is an Amazon Machine Image (AMI)?
 
-- A) Integration with Active Directory
+- A) A template for creating EC2 instances
+  - Correct: An AMI is a pre-configured template for creating EC2 instances.
+- B) A backup of an EBS volume
+  - Incorrect: This describes an EBS Snapshot, not an AMI.
+- C) A type of EC2 instance storage
+  - Incorrect: An AMI is not a type of storage; it's a template.
+- D) A service for scaling EC2 instances
+  - Incorrect: An AMI is a template, not a scaling service.
 
-  - Incorrect: Integration with Active Directory is a feature of FSx for Windows File Server.
-
-- B) High-performance computing
-
-  - Correct: FSx for Lustre is designed for high-performance computing applications.
-
-- C) Web serving
-  - Incorrect: FSx for Lustre is not specifically designed for web serving.
-- D) Database storage
-  - Incorrect: FSx for Lustre is optimized for data processing and analytics, not specifically for database storage.
-  <!-- pagebreak -->
+<!-- pagebreak -->
 
 ## Question 6:
 
-How does Amazon EFS ensure high availability?
+What is the role of EC2 Image Builder?
 
-- A) By replicating data within a single Availability Zone
+- A) To automate the creation, testing, and distribution of custom AMIs
+  - Correct: EC2 Image Builder automates the entire lifecycle of custom AMIs.
+- B) To manage block-level storage for EC2 instances
+  - Incorrect: This describes EBS, not EC2 Image Builder.
+- C) To distribute incoming traffic across multiple EC2 instances
+  - Incorrect: This describes an ELB, not EC2 Image Builder.
+- D) To provide ephemeral storage for EC2 instances
+  - Incorrect: This describes an EC2 Instance Store, not EC2 Image Builder.
 
-  - Incorrect: EFS replicates data across multiple Availability Zones, not just within one.
-
-- B) By replicating data across multiple Availability Zones
-
-  - Correct: EFS is designed to be highly available by replicating data across multiple Availability Zones.
-
-- C) By storing data in Glacier
-  - Incorrect: Glacier is used for archival storage, not for ensuring high availability of EFS.
-- D) By using instance store
-  - Incorrect: Instance store provides ephemeral storage, not high availability.
-  <!-- pagebreak -->
+<!-- pagebreak -->
 
 ## Question 7:
 
-Which Amazon FSx variant is designed for Windows-based applications?
+What is a characteristic of EC2 instance store?
 
-- A) FSx for Lustre
+- A) It provides persistent storage across instance reboots
+  - Incorrect: Instance store data is lost when the instance stops or terminates.
+- B) It offers high throughput and low latency
+  - Correct: Instance store offers high performance for temporary data.
+- C) It can be attached to multiple EC2 instances simultaneously
+  - Incorrect: This is a feature of EBS Multi-Attach, not instance store.
+- D) It automatically backs up data to Amazon S3
+  - Incorrect: Instance store does not have automatic backups to S3.
 
-  - Incorrect: FSx for Lustre is designed for high-performance computing, not specifically for Windows-based applications.
-
-- B) FSx for Windows File Server
-
-  - Correct: FSx for Windows File Server is designed for Windows-based applications.
-
-- C) FSx for NFS
-  - Incorrect: FSx for NFS is not a variant of Amazon FSx.
-- D) FSx for Hadoop
-  - Incorrect: FSx does not have a variant specifically for Hadoop.
-  <!-- pagebreak -->
+<!-- pagebreak -->
 
 ## Question 8:
 
-What is a primary use case for Amazon FSx for Lustre?
+What is a key feature of Amazon Elastic File System (EFS)?
 
-- A) Web hosting
+- A) It provides block-level storage for EC2 instances
+  - Incorrect: This describes EBS, not EFS.
+- B) It offers a shared file system accessible by multiple instances
+  - Correct: EFS provides a scalable and shared file system for multiple instances.
+- C) It is designed for high-performance computing tasks
+  - Incorrect: This describes FSx for Lustre, not EFS.
+- D) It provides automatic load balancing for web applications
+  - Incorrect: This is a feature of ELB, not EFS.
 
-  - Incorrect: FSx for Lustre is optimized for high-performance computing, not web hosting.
-
-- B) High-performance data processing
-
-  - Correct: FSx for Lustre is ideal for high-performance data processing applications.
-
-- C) Email hosting
-  - Incorrect: FSx for Lustre is not designed for email hosting.
-- D) Backup storage
-  - Incorrect: FSx for Lustre is not typically used for backup storage.
-  <!-- pagebreak -->
+<!-- pagebreak -->
 
 ## Question 9:
 
-Which Amazon EFS feature helps manage costs for infrequently accessed files?
+What is the primary benefit of Amazon EFS Infrequent Access (EFS-IA)?
 
-- A) EFS Backup
+- A) Higher performance for frequently accessed files
+  - Incorrect: EFS-IA is for infrequently accessed files, not higher performance.
+- B) Lower storage costs for infrequently accessed files
+  - Correct: EFS-IA offers cost-effective storage for files not accessed frequently.
+- C) Improved data replication across regions
+  - Incorrect: EFS-IA focuses on cost savings, not cross-region replication.
+- D) Automated scaling of compute resources
+  - Incorrect: EFS-IA deals with storage, not compute scaling.
 
-  - Incorrect: EFS Backup is for backing up data, not for managing costs of infrequent access.
-
-- B) EFS Infrequent Access (EFS-IA)
-
-  - Correct: EFS-IA is designed to reduce costs for infrequently accessed files.
-
-- C) EFS Lifecycle Management
-  - Incorrect: While related to managing data lifecycle, the specific feature for cost management is EFS-IA.
-- D) EFS Archive
-  - Incorrect: EFS does not have a specific "archive" feature; the cost-saving feature is EFS-IA.
-  <!-- pagebreak -->
+<!-- pagebreak -->
 
 ## Question 10:
 
-Which of the following is a key benefit of using Amazon FSx?
+Which variant of Amazon FSx is optimized for high-performance computing?
 
-- A) Manual hardware maintenance
-
-  - Incorrect: Amazon FSx is fully managed, eliminating the need for manual hardware maintenance.
-
-- B) Fully managed service
-
-  - Correct: Amazon FSx is a fully managed service, reducing the operational overhead for file storage.
-
-- C) Limited scalability
-  - Incorrect: Amazon FSx is designed to be highly scalable.
-- D) Single-AZ deployment only
-  - Incorrect: Amazon FSx can be deployed across multiple Availability Zones for high availability.
-
+- A) FSx for Windows File Server
+  - Incorrect: This is optimized for Windows-based applications.
+- B) FSx for Lustre
+  - Correct: FSx for Lustre is designed for high-performance computing.
+- C) FSx for NFS
+  - Incorrect: FSx for NFS is not a variant offered by AWS.
+- D) FSx for NetApp
+  - Incorrect: FSx for NetApp is not a variant offered by AWS.

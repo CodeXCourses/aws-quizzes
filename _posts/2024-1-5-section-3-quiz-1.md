@@ -5,187 +5,152 @@ section: Section-3
 lesson: 1
 ---
 
-<!-- Content Covered Lesson-1, Lesson-3 of Section-3 -->
+<!-- Content Covered Lesson-1 to Lesson-4 of Section-3 -->
 
 ## Question 1:
 
 What is Amazon EC2 primarily used for?
 
-- A) Object storage
+- A) Running serverless functions
+  - Incorrect: This is the function of AWS Lambda.
+- B) Renting virtual computers to run applications
+  - Correct: EC2 allows users to rent virtual computers to run their applications.
+- C) Hosting relational databases
+  - Incorrect: This is the function of Amazon RDS.
+- D) Providing a content delivery network
+  - Incorrect: This is the function of Amazon CloudFront.
 
-  - Incorrect: Amazon EC2 is used for compute capacity, not object storage.
-
-- B) Running virtual servers
-
-  - Correct: Amazon EC2 is used to rent virtual computers on which users can run their own applications.
-
-- C) Database hosting
-  - Incorrect: While EC2 can host databases, its primary function is providing virtual servers.
-- D) Content delivery
-  - Incorrect: Amazon EC2 is not primarily used for content delivery.
-  <!-- pagebreak -->
+<!-- pagebreak -->
 
 ## Question 2:
 
-Which feature of EC2 allows you to scale computing capacity up or down within minutes?
+Which of the following is a key benefit of using Amazon EC2?
 
-- A) Elastic Block Store
+- A) Only paying for the compute time used
+  - Correct: EC2's cost-effectiveness comes from paying only for the compute time used.
+- B) Guaranteed uptime of 100%
+  - Incorrect: No service guarantees 100% uptime.
+- C) Free tier for unlimited use
+  - Incorrect: The free tier is limited.
+- D) Automatic compliance with all regulations
+  - Incorrect: Compliance requires specific configurations and settings.
 
-  - Incorrect: Elastic Block Store (EBS) provides storage for EC2 instances but does not handle scaling.
-
-- B) Auto Scaling
-
-  - Correct: Auto Scaling allows you to automatically increase or decrease capacity within minutes.
-
-- C) Elastic Load Balancing
-  - Incorrect: Elastic Load Balancing distributes incoming traffic across multiple EC2 instances but does not directly scale them.
-- D) AWS Lambda
-  - Incorrect: AWS Lambda is used for serverless computing, not scaling EC2 instances.
-  <!-- pagebreak -->
+<!-- pagebreak -->
 
 ## Question 3:
 
-What type of storage does EC2 provide for persistent data?
+What role do security groups play in AWS EC2?
 
-- A) Instance Store
+- A) They manage user permissions within the AWS Management Console.
+  - Incorrect: This is the role of IAM.
+- B) They act as virtual firewalls to control traffic to EC2 instances.
+  - Correct: Security groups control inbound and outbound traffic to EC2 instances.
+- C) They provide automatic backups for EC2 instances.
+  - Incorrect: Backups are managed by EBS snapshots or other services.
+- D) They monitor EC2 instance health.
+  - Incorrect: Health monitoring is done through CloudWatch.
 
-  - Incorrect: Instance Store provides temporary storage that is lost when the instance is stopped or terminated.
-
-- B) Elastic Block Store (EBS)
-
-  - Correct: EBS provides persistent block storage that remains even after the instance is terminated.
-
-- C) S3
-  - Incorrect: S3 is an object storage service, not specifically for EC2 instance storage.
-- D) Glacier
-  - Incorrect: Glacier is an archival storage service, not used for storing persistent data on EC2 instances.
-  <!-- pagebreak -->
+<!-- pagebreak -->
 
 ## Question 4:
 
-Which EC2 instance type is best suited for compute-bound applications?
+What is the default behavior of outbound rules in EC2 security groups?
 
-- A) General Purpose Instances
+- A) Block all outbound traffic
+  - Incorrect: This is not the default setting.
+- B) Allow all outbound traffic
+  - Correct: By default, most security groups allow all outbound traffic.
+- C) Allow only HTTP and HTTPS traffic
+  - Incorrect: This is not the default setting.
+- D) Allow only traffic within the VPC
+  - Incorrect: This is not the default setting.
 
-  - Incorrect: General Purpose Instances provide a balance of compute, memory, and networking resources.
-
-- B) Compute Optimized Instances
-
-  - Correct: Compute Optimized Instances are designed for applications that need high compute power.
-
-- C) Memory Optimized Instances
-  - Incorrect: Memory Optimized Instances are best for memory-intensive applications.
-- D) Storage Optimized Instances
-  - Incorrect: Storage Optimized Instances are designed for high-throughput and low-latency access to data.
-  <!-- pagebreak -->
+<!-- pagebreak -->
 
 ## Question 5:
 
-What is the purpose of a security group in AWS EC2?
+Which type of EC2 instance is ideal for applications requiring high memory to CPU ratio?
 
-- A) To manage user access to the AWS Management Console
+- A) General Purpose Instances
+  - Incorrect: These are balanced in terms of resources.
+- B) Compute Optimized Instances
+  - Incorrect: These are designed for compute-intensive applications.
+- C) Memory Optimized Instances
+  - Correct: Memory optimized instances are ideal for applications requiring high memory to CPU ratio.
+- D) Storage Optimized Instances
+  - Incorrect: These are designed for high-throughput and low-latency access to data.
 
-  - Incorrect: IAM policies manage user access to the AWS Management Console.
-
-- B) To define network traffic rules for EC2 instances
-
-  - Correct: Security groups act as virtual firewalls to control inbound and outbound traffic to EC2 instances.
-
-- C) To encrypt data at rest
-  - Incorrect: Security groups do not handle data encryption; this is managed by EBS and other services.
-- D) To monitor application performance
-  - Incorrect: Security groups are not used for monitoring performance.
-  <!-- pagebreak -->
+<!-- pagebreak -->
 
 ## Question 6:
 
-How can you allow only specific IP addresses to access your EC2 instance?
+Which EC2 instance purchasing option is best for workloads with predictable usage patterns over a long period?
 
-- A) By configuring Auto Scaling
+- A) On-Demand Instances
+  - Incorrect: These are best for short workloads.
+- B) Spot Instances
+  - Incorrect: These are best for short-duration workloads with cost savings.
+- C) Reserved Instances
+  - Correct: Reserved Instances are suitable for long-term, predictable workloads.
+- D) Dedicated Hosts
+  - Incorrect: These are for regulatory compliance and control over instance placement.
 
-  - Incorrect: Auto Scaling manages the number of instances, not access control.
-
-- B) By setting rules in the security group
-
-  - Correct: Security groups allow you to specify rules to permit or deny access based on IP addresses.
-
-- C) By using Elastic Load Balancing
-  - Incorrect: Elastic Load Balancing distributes traffic but does not handle IP-based access control.
-- D) By creating an IAM role
-  - Incorrect: IAM roles are used for granting permissions to AWS services, not for controlling network traffic to EC2 instances.
-  <!-- pagebreak -->
+<!-- pagebreak -->
 
 ## Question 7:
 
-Which EC2 instance type is designed for applications that process large datasets in memory?
+What is the main advantage of using Spot Instances?
 
-- A) General Purpose Instances
+- A) Guaranteed instance availability
+  - Incorrect: Spot Instances can be terminated by AWS with short notice.
+- B) Highest cost savings for short-duration workloads
+  - Correct: Spot Instances offer the highest cost savings for short-duration workloads.
+- C) Ability to change instance type during the reservation period
+  - Incorrect: This is a feature of Convertible Reserved Instances.
+- D) Persistent storage through EBS
+  - Incorrect: This is not specific to Spot Instances.
 
-  - Incorrect: General Purpose Instances provide a balance of resources.
-
-- B) Compute Optimized Instances
-
-  - Incorrect: Compute Optimized Instances are designed for compute-bound applications.
-
-- C) Memory Optimized Instances
-
-  - Correct: Memory Optimized Instances are ideal for memory-intensive applications.
-
-- D) Storage Optimized Instances
-  - Incorrect: Storage Optimized Instances are for high-throughput data access.
-  <!-- pagebreak -->
+<!-- pagebreak -->
 
 ## Question 8:
 
-What is the default setting for outbound traffic in a security group?
+Which of the following is true about EC2 Dedicated Hosts?
 
-- A) Denied
+- A) They offer the lowest cost option for EC2 instances
+  - Incorrect: Dedicated Hosts are typically more expensive due to the dedicated hardware.
+- B) They allow booking of an entire physical server for regulatory compliance
+  - Correct: Dedicated Hosts allow booking of an entire physical server, useful for compliance.
+- C) They are designed for applications with high network throughput
+  - Incorrect: This describes Networking Optimized Instances.
+- D) They automatically scale with traffic
+  - Incorrect: Scaling is managed through Auto Scaling Groups.
 
-  - Incorrect: By default, security groups allow all outbound traffic.
-
-- B) Allowed
-
-  - Correct: By default, security groups allow all outbound traffic.
-
-- C) Restricted to specific ports
-  - Incorrect: The default setting is to allow all outbound traffic, not restrict it to specific ports.
-- D) Restricted to specific IP addresses
-  - Incorrect: The default setting is to allow all outbound traffic, not restrict it to specific IP addresses.
-  <!-- pagebreak -->
+<!-- pagebreak -->
 
 ## Question 9:
 
-What kind of storage is ephemeral and is lost when an EC2 instance is stopped or terminated?
+Which instance type family is suitable for applications that require high-throughput and low-latency access to data?
 
-- A) S3
+- A) General Purpose Instances
+  - Incorrect: These offer a balance of resources.
+- B) Compute Optimized Instances
+  - Incorrect: These are designed for compute-bound applications.
+- C) Memory Optimized Instances
+  - Incorrect: These are for memory-intensive workloads.
+- D) Storage Optimized Instances
+  - Correct: Storage Optimized Instances are designed for high-throughput and low-latency access to data.
 
-  - Incorrect: S3 is a persistent object storage service.
-
-- B) EBS
-
-  - Incorrect: EBS provides persistent block storage.
-
-- C) Instance Store
-
-  - Correct: Instance Store provides temporary block-level storage that is lost when the instance is stopped or terminated.
-
-- D) Glacier
-  - Incorrect: Glacier is used for archival storage, not temporary storage.
-  <!-- pagebreak -->
+<!-- pagebreak -->
 
 ## Question 10:
 
-Which instance type would you choose for a high-performance computing (HPC) application?
+What is a key feature of the Application Load Balancer (ALB) in AWS?
 
-- A) General Purpose Instances
-
-  - Incorrect: General Purpose Instances are suitable for a variety of workloads but not specifically optimized for HPC.
-
-- B) Compute Optimized Instances
-
-  - Correct: Compute Optimized Instances are designed for applications requiring high compute power, such as HPC.
-
-- C) Memory Optimized Instances
-  - Incorrect: Memory Optimized Instances are better suited for memory-intensive applications.
-- D) Storage Optimized Instances
-  - Incorrect: Storage Optimized Instances are designed for high-throughput data access, not HPC.
+- A) It operates at the transport layer (Layer 4).
+  - Incorrect: This describes the Network Load Balancer (NLB).
+- B) It supports content-based routing.
+  - Correct: ALB operates at the application layer (Layer 7) and supports content-based routing.
+- C) It can handle millions of requests per second.
+  - Incorrect: This is a feature of the Network Load Balancer (NLB).
+- D) It is the original load balancer offered by AWS.
+  - Incorrect: This describes the Classic Load Balancer (CLB).
