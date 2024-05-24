@@ -244,7 +244,7 @@ function displayResults() {
   } else {
     const failMessage = document.createElement('p');
     failMessage.textContent =
-      'You failed the quiz. Please refresh the page to try again after reviewing the slides.';
+      "It looks like you didn't pass the quiz this time. Please take a moment to review the slides, then refresh the page to try again.";
     contentDiv.appendChild(failMessage);
   }
 
