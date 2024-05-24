@@ -2,7 +2,7 @@
 layout: posts
 title: 'Section 8 Quiz-2'
 section: Section-8
-lesson: 4
+lesson: 2
 ---
 
 <!-- Content Covered Lesson-4, Lesson-5, Lesson-6 of Section-8 -->
