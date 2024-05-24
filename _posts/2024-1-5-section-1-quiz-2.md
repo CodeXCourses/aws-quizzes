@@ -25,18 +25,12 @@ What is a key benefit of using IAM groups for policy management?
 
 ## Question 2:
 
-Which element in an IAM policy specifies the action that is allowed or denied?
+True or False: Platform as a Service (PaaS) is the best service model for developing and deploying applications without managing underlying hardware.
 
-- A) Effect
-
-  - Incorrect: The Effect element specifies whether the action is allowed or denied.
-
-- B) Action
-
-  - Correct: The Action element specifies the permissions granted or denied.
-
-- C) Resource
-  - Incorrect: The Resource element specifies the AWS resource the policy applies to.
+- A) True
+  - Correct: PaaS provides tools for application development and deployment without managing hardware.
+- B) False
+  - Incorrect: PaaS is designed to avoid the need for managing hardware resources.
   <!-- pagebreak -->
 
 ## Question 3:
@@ -137,18 +131,23 @@ What does policy inheritance in IAM groups allow you to do?
 
 ## Question 9:
 
-What is the function of the Effect element in an IAM policy?
+What is the function of IAM regions in AWS?
 
-- A) To specify the resource the policy applies to
+- A) To specify the geographical location where IAM policies are enforced
 
-  - Incorrect: The Resource element specifies the AWS resource.
+  - Incorrect: IAM policies are global and not restricted to specific geographical regions.
 
-- B) To state whether the action is allowed or denied
+- B) To determine the physical location of the data centers
 
-  - Correct: The Effect element states the permission (allow or deny).
+  - Incorrect: IAM regions are not used to determine the physical location of the data centers.
 
-- C) To define the specific actions that are permitted
-  - Incorrect: The Action element defines the specific permissions.
+- C) IAM is a global service and does not have specific regions
+
+  - Correct: IAM is a global service and does not have specific regions. It applies policies and manages identities globally.
+
+- D) To manage user access to different AWS services
+
+  - Incorrect: IAM policies manage user access to different AWS services, but this is not specific to IAM regions.
   <!-- pagebreak -->
 
 ## Question 10:
