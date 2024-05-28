@@ -5,7 +5,7 @@ section: Section-16
 lesson: 1
 ---
 
-<!-- Content Covered Lesson-1 of Section-16 -->
+<!-- Content Covered Lesson-1 to Lesson 15 of Section-16 -->
 
 ## Question 1
 What is a key feature of AWS Organizations for managing multiple AWS accounts?
