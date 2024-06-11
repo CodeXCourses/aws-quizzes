@@ -75,7 +75,7 @@ What should you consider when choosing an AWS region?
 
   - Incorrect: Proximity to AWS offices is not a key consideration.
 
-- B) Availability of specific services, pricing, and compliance
+- B) Availability of specific services, pricing, latency, and compliance
 
   - Correct: These are important factors to consider when choosing a region.
 
